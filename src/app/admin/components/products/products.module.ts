@@ -8,6 +8,15 @@ import { ListComponent } from './list/list.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { DeleteDirective } from 'src/app/directives/admin/delete.directive';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteDialogComponent } from 'src/app/dialogs/delete-dialog/delete-dialog.component';
+
+
+
+
 
 
 
@@ -17,6 +26,10 @@ import { MatButtonModule } from '@angular/material/button';
     ProductsComponent,
     CreateComponent,
     ListComponent,
+    DeleteDirective,
+    DeleteDialogComponent
+
+
 
   ],
   imports: [
@@ -25,6 +38,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
+
+
     RouterModule.forChild([
       {
         path: '', component: ProductsComponent
