@@ -15,7 +15,8 @@ import { CustomersModule } from './customers/customers.module';
     ProductsModule,
     OrderModule,
     DashboardModule,
-    CustomersModule
+    CustomersModule,
+
 
   ]
 })
