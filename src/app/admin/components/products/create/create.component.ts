@@ -25,7 +25,7 @@ export class CreateComponent extends BaseComponent implements OnInit {
     controller: "products",
     explanation: "Resimleri sürükleyin yada yükleyin",
     isAdminPage: true,
-    accept: ".jpg,.png,.jpeg,.json "
+    accept: ".jpg,.png,.jpeg,.json"
   };
 
   create(name: HTMLInputElement, stock: HTMLInputElement, price: HTMLInputElement) {

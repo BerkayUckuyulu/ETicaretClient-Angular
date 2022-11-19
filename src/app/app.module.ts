@@ -13,6 +13,7 @@ import { BaseComponent } from './base/base.component';
 import { Base } from './base';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
 
 @NgModule({
   declarations: [
