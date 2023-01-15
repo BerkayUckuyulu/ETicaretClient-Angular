@@ -1,0 +1,29 @@
+{
+    "cekilisler":[
+        {
+            "id":1,
+            "name":"cekilis-1",
+            "oran":"20"
+        },
+        {
+            "id":2,
+            "name":"cekilis-2",
+            "oran":"20"
+        }, 
+          {
+            "id":3,
+            "name":"cekilis-3",
+            "oran":"20"
+        },
+        {
+            "id":4,
+            "name":"cekilis-4",
+            "oran":"20"
+        },
+        {
+            "id":5,
+            "name":"cekilis-5",
+            "oran":"20"
+        }
+    ]
+}

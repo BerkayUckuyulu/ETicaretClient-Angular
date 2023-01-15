@@ -10,16 +10,18 @@ import { ListComponent } from './list/list.component';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent extends Base implements OnInit {
-
-  constructor(private alertify: AlertifyService, public spinnerService: NgxSpinnerService, private httpClientService: HttpClientService) {
-    super(spinnerService)
+  constructor(
+    private alertify: AlertifyService,
+    public spinnerService: NgxSpinnerService,
+    private httpClientService: HttpClientService
+  ) {
+    super(spinnerService);
   }
   ngOnInit(): void {
     this.showSpinner(SpinnerType.BallAtom);
-
 
     // this.httpClientService.delete({ controller: "products" }, "6e4beda6-7eae-45e0-8018-5aa5e0f53b24").subscribe();
 
@@ -53,21 +55,11 @@ export class ProductsComponent extends Base implements OnInit {
     // this.httpClientService.get({
     //   fullEndPoint: "https://jsonplaceholder.typicode.com/posts"
     // }).subscribe(data => console.log(data))
-
-
-
-
-
-
-
-
   }
 
-  @ViewChild(ListComponent) listComponents: ListComponent
+  @ViewChild(ListComponent) listComponents: ListComponent;
 
   createdProduct() {
     this.listComponents.getProducts();
   }
-
-
 }

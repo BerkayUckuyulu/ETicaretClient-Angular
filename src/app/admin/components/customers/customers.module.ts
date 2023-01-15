@@ -14,6 +14,7 @@ import { CustomersComponent } from './customers.component';
     RouterModule.forChild([
       { path: 'x', component: CustomersComponent }
     ])
-  ]
+  ],
+  exports:[CustomersComponent]
 })
 export class CustomersModule { }

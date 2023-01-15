@@ -16,10 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,11 +25,11 @@ import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upl
     BrowserAnimationsModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
-    { provide: "baseUrl", useValue: "https://localhost:44360/api", multi: true }
+    { provide: 'baseUrl', useValue: 'https://localhost:7183/api', multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

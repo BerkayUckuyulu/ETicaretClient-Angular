@@ -16,22 +16,12 @@ import { DeleteDialogComponent } from 'src/app/dialogs/delete-dialog/delete-dial
 import { FileUploadModule } from 'src/app/services/common/file-upload/file-upload.module';
 import { DialogModule } from '@angular/cdk/dialog';
 
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateComponent,
     ListComponent,
     DeleteDirective,
-
-
-
   ],
   imports: [
     CommonModule,
@@ -45,13 +35,12 @@ import { DialogModule } from '@angular/cdk/dialog';
     DialogModule,
     FileUploadModule,
 
-
     RouterModule.forChild([
       {
-        path: '', component: ProductsComponent
-      }
-    ])
+        path: '',
+        component: ProductsComponent,
+      },
+    ]),
   ],
-
 })
-export class ProductsModule { }
+export class ProductsModule {}

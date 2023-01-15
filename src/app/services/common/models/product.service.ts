@@ -9,7 +9,7 @@ import { HttpClientService } from '../http-client.service';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private httpClientService: HttpClientService) { }
+  constructor(private httpClientService: HttpClientService) {}
 
   create(
     product: Create_Product,

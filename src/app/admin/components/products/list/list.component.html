@@ -24,10 +24,16 @@
       <td mat-cell *matCellDef="let element">{{ element.updatedDate }}</td>
     </ng-container>
 
+    <ng-container class="photo-container" matColumnDef="photos">
+      <th mat-header-cell *matHeaderCellDef>Photos</th>
+      <td class="text-center " mat-cell *matCellDef="let element">
+        <img (click)="productImageDialogOpen(element.id)" class="icon-list" src="../../../../../assets/upload-24.png" alt="" />
+      </td>
+    </ng-container>
     <ng-container class="edit-container" matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Edit</th>
       <td mat-cell *matCellDef="let element">
-        <img src="../../../../../assets/edit-24.png" alt="" />
+        <img class="icon-list" src="../../../../../assets/edit-24.png" alt="" />
       </td>
     </ng-container>
     <ng-container class="delete-container" matColumnDef="delete">

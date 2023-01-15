@@ -5,11 +5,10 @@ import { DialogPosition, MatDialog } from '@angular/material/dialog';
 import { ComponentType } from 'ngx-toastr';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
-
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
   openDialog(dialogParameters: DialogParameters): void {
     const dialogRef = this.dialog.open(dialogParameters.componentType, {
@@ -19,7 +18,7 @@ export class DialogService {
       data: dialogParameters.data,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result == dialogParameters.data) {
         dialogParameters.afterClosed();
       }
@@ -29,15 +28,13 @@ export class DialogService {
 
 export class DialogParameters {
   componentType: ComponentType<any>;
-  data: any;
-  afterClosed: () => void;
+  data?: any;
+  afterClosed?: () => void;
   options?: DialogOptions = new DialogOptions();
-
 }
 
 export class DialogOptions {
-  width: string = "250px";
-  height: string;
-  position: DialogPosition
-
+  width?: string = '250px';
+  height?: string;
+  position?: DialogPosition;
 }
