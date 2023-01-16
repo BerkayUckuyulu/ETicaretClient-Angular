@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
 import { Create_Product } from 'src/app/contracts/create_product';
 import { List_Product } from 'src/app/contracts/list_products';
+import { List_Product_Image } from 'src/app/contracts/list_product_image';
 import { HttpClientService } from '../http-client.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private httpClientService: HttpClientService) {}
+  constructor(private httpClientService: HttpClientService) { }
 
   create(
     product: Create_Product,
@@ -80,5 +81,27 @@ export class ProductService {
     //   controller: "products"
 
     // }, id).subscribe();
+  }
+
+  async readImages(id: string, successCallBack?: () => void): Promise<List_Product_Image[]> {
+    const getObservable: Observable<List_Product_Image[]> =
+      this.httpClientService.get<List_Product_Image[]>(
+        { action: 'GetProductImages', controller: 'Products' },
+        id
+      );
+
+    const images: List_Product_Image[] = await firstValueFrom(getObservable)
+    successCallBack();
+    return images;
+  }
+
+  async deleteImage(productId: string, imageId: string, successCallBack?: () => void) {
+    const deleteObservable = this.httpClientService.delete({
+      action: "DeleteImage",
+      controller: "Products",
+      queryString: `imageId=${imageId}`
+    }, productId)
+    await firstValueFrom(deleteObservable);
+    successCallBack();
   }
 }

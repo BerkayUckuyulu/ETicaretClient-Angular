@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { LayoutComponent } from './admin/layout/layout.component';
-import { ListProductComponent } from './cekilisUi/list-product/list-product.component';
 import { HomeComponent } from './ui/components/home/home.component';
 
 const routes: Routes = [
