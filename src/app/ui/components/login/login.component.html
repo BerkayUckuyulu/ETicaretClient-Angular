@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-md-6 offset-3">
+            <div class="mb-3">
+                <label for="userName" class="form-label">Kullanıcı Adı & Email</label>
+                <input #txtUsernameOrEmail type="text" class="form-control" id="userName" />
+                <small class="form-text text-muted errorMessage">Kullanıcı adınızı veya e-mailinizi giriniz.</small>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Şifre</label>
+                <input #txtPassword type="password" class="form-control" id="password" />
+                <small class="form-text text-muted errorMessage">Şifrenizi giriniz.</small>
+            </div>
+            <div class="text-end">
+                <button (click)="login(txtUsernameOrEmail.value,txtPassword.value)" class="btn btn-primary">Giriş
+                    Yap</button>
+            </div>
+        </div>
+    </div>
+</div>
