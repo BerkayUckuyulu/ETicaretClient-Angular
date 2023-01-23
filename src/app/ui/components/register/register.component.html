@@ -3,21 +3,21 @@
         <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
             <div class="col-md-6 offset-3">
                 <div class="mb-3">
-                    <label for="adSoyad" class="form-label">Ad Soyad</label>
-                    <input formControlName="adSoyad" type="text" class="form-control" id="adSoyad"
-                        [ngClass]="{'is-invalid':submited && component.adSoyad.errors}">
+                    <label for="nameSurname" class="form-label">Ad Soyad</label>
+                    <input formControlName="nameSurname" type="text" class="form-control" id="nameSurname"
+                        [ngClass]="{'is-invalid':submited && component.nameSurname.errors}">
                     <small class="form-text text-muted errorMessage"
-                        *ngIf="submited && component['adSoyad']?.errors?.required">Adınızı giriniz.</small>
+                        *ngIf="submited && component['nameSurname']?.errors?.required">Adınızı giriniz.</small>
                     <small class="form-text text-muted errorMessage"
-                        *ngIf="submited && (component.adSoyad?.errors?.maxlength || component?.adSoyad?.errors?.minlength)">Adınızı
+                        *ngIf="submited && (component.nameSurname?.errors?.maxlength || component?.nameSurname?.errors?.minlength)">Adınızı
                         3 ile 50 karakter arasında giriniz.</small>
                 </div>
                 <div class="mb-3">
-                    <label for="kullaniciAdi" class="form-label">Kullanıcı Adı</label>
-                    <input formControlName="kullaniciAdi" type="text" class="form-control" id="kullaniciAdi"
-                        [ngClass]="{'is-invalid':submited && component.kullaniciAdi.errors}">
+                    <label for="userName" class="form-label">Kullanıcı Adı</label>
+                    <input formControlName="userName" type="text" class="form-control" id="userName"
+                        [ngClass]="{'is-invalid':submited && component.userName.errors}">
                     <small class="form-text text-muted errorMessage"
-                        *ngIf="submited && component['kullaniciAdi']?.errors?.required">Kullanıcı adınızı
+                        *ngIf="submited && component['userName']?.errors?.required">Kullanıcı adınızı
                         giriniz.</small>
                 </div>
                 <div class="mb-3">
@@ -31,18 +31,18 @@
                         giriniz.</small>
                 </div>
                 <div class="mb-3">
-                    <label for="sifre" class="form-label">Şifre</label>
-                    <input formControlName="sifre" type="password" class="form-control" id="sifre"
-                        [ngClass]="{'is-invalid':submited && component.sifre.errors}">
+                    <label for="password" class="form-label">Şifre</label>
+                    <input formControlName="password" type="password" class="form-control" id="password"
+                        [ngClass]="{'is-invalid':submited && component.password.errors}">
                     <small class="form-text text-muted errorMessage"
-                        *ngIf="submited && component['sifre']?.errors?.required">Şifrenizi giriniz.</small>
+                        *ngIf="submited && component['password']?.errors?.required">Şifrenizi giriniz.</small>
                 </div>
                 <div class="mb-3">
-                    <label for="sifreTekrari" class="form-label">Şifre Tekrarı</label>
-                    <input formControlName="sifreTekrari" type="password" class="form-control" id="sifreTekrari"
-                        [ngClass]="{'is-invalid':submited && component.sifreTekrari.errors}">
+                    <label for="passwordConfirm" class="form-label">Şifre Tekrarı</label>
+                    <input formControlName="passwordConfirm" type="password" class="form-control" id="passwordConfirm"
+                        [ngClass]="{'is-invalid':submited && component.passwordConfirm.errors}">
                     <small class="form-text text-muted errorMessage"
-                        *ngIf="submited && component['sifreTekrari']?.errors?.required">Şifre tekrarınızı
+                        *ngIf="submited && component['passwordConfirm']?.errors?.required">Şifre tekrarınızı
                         giriniz.</small>
                     <small class="form-text text-muted errorMessage" *ngIf="frm.hasError('notSame')">Şifreler
                         eşleşmiyor.</small>
