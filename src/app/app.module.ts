@@ -14,6 +14,7 @@ import { Base } from './base';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,10 +27,16 @@ import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upl
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem("accessToken"),
+        allowedDomains: ["localhost:7183"]
+      }
+    })
   ],
   providers: [
     { provide: 'baseUrl', useValue: 'https://localhost:7183/api', multi: true },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
