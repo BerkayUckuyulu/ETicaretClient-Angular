@@ -12,9 +12,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BaseComponent } from './base/base.component';
 import { Base } from './base';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { HttpErrorHandlerInterceptorService } from './services/common/http-error-handler-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { JwtModule } from '@auth0/angular-jwt';
   ],
   providers: [
     { provide: 'baseUrl', useValue: 'https://localhost:7183/api', multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorHandlerInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent],
 })

@@ -22,20 +22,5 @@ export class UserService {
     return await firstValueFrom(observable) as Create_User;
   }
 
-  async login(userNameOrEmail: string, password: string, calback?: () => void): Promise<any> {
-    const observable: Observable<any | TokenResponse> = this.httpClientService.post<any | TokenResponse>({
-      action: "login",
-      controller: "users"
-    }, { userNameOrEmail, password })
 
-    const token: TokenResponse = await firstValueFrom(observable) as TokenResponse;
-    if (token) {
-      localStorage.setItem("accessToken", token.token.accessToken);
-      localStorage.setItem("expiration", token.token.expiration.toString())
-      this.toastrService.message("Giriş başarılı.", "Başarılı", { messageType: ToastrMessageType.Success, position: ToastrPosition.TopRight })
-
-    }
-
-    calback();
-  }
 }
