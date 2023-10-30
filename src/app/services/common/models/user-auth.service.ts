@@ -20,11 +20,29 @@ export class UserAuthService {
     const token: TokenResponse = await firstValueFrom(observable) as TokenResponse;
     if (token) {
       localStorage.setItem("accessToken", token.token.accessToken);
-      localStorage.setItem("expiration", token.token.expiration.toString())
-      this.toastrService.message("Giriş başarılı.", "Başarılı", { messageType: ToastrMessageType.Success, position: ToastrPosition.TopRight })
+      localStorage.setItem("expiration", token.token.expiration.toString());
+      localStorage.setItem("refreshToken", token.token.refreshToken.toString());
+      this.toastrService.message("Giriş başarılı.", "Başarılı", { messageType: ToastrMessageType.Success, position: ToastrPosition.TopRight });
 
     }
+    if (calback)
+      calback();
+  }
 
-    calback();
+  async refreshTokenLogin(refreshToken: string, calback?: () => void) {
+    const observable: Observable<any | TokenResponse> = this.httpClientService.post({
+      action: "RefreshTokenLogin",
+      controller: "Auth",
+
+    }, { refreshToken: refreshToken });
+    const token: TokenResponse = await firstValueFrom(observable) as TokenResponse;
+
+    if (token) {
+      localStorage.setItem("accessToken", token.token.accessToken);
+      localStorage.setItem("expiration", token.token.expiration.toString());
+      localStorage.setItem("refreshToken", token.token.refreshToken.toString());
+    }
+    if (calback)
+      calback();
   }
 }

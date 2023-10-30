@@ -25,7 +25,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
     await this.userAuthService.login(UsernameOrEmail, Password, () => {
       this.authService.identityCheck();
       this.activatedRoute.queryParams.subscribe(params => {
-        debugger;
         const returnUrl: string = params["returnUrl"];
         if (returnUrl) {
           this.router.navigate([returnUrl]);
